@@ -1,0 +1,54 @@
+.upload-wrapper {
+  max-width: calc(100vw - 40px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  .encrypt-btn {
+    border: 1px solid gray;
+    outline: 0;
+    color: whitesmoke;
+    background: transparent;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    border-radius: 5px;
+
+    &:hover {
+      box-shadow: 0 0 10px lightgray;
+    }
+  }
+  .encrypt-btn-disable {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .symbol {
+    font-size: 24px;
+  }
+  .encrypt-in-progress {
+    display: flex;
+    align-items: center;
+    grid-gap: 20px;
+  }
+  .upload-in-progress {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-gap: 20px;
+
+    .upload-status {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 20px;
+    }
+  }
+  .submit-done {
+    display: flex;
+    grid-gap: 20px;
+    flex-direction: column;
+  }
+}

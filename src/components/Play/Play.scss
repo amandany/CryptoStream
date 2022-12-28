@@ -1,0 +1,35 @@
+.play-wrapper {
+  max-width: calc(100vw - 40px);
+  width: 100%;
+
+  .video-player {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    video {
+      max-width: 30vw;
+    }
+    .lock-icon {
+      pointer-events: none;
+      position: absolute;
+      animation: lock 1.5s linear forwards;
+      border-radius: 50%;
+    }
+  }
+}
+
+@keyframes lock {
+  from {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+    background: rgba(128, 128, 128, 0);
+  }
+  to {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    background: rgba(65, 65, 65, 0.8);
+  }
+}

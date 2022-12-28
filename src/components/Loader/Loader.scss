@@ -1,0 +1,20 @@
+.loader {
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  border: 7px solid transparent;
+  border-image: linear-gradient(#04eeff, #0b95dd, #3700ff);
+  border-radius: 100%;
+  animation: spinner 0.5s linear infinite;
+}
+@keyframes spinner {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

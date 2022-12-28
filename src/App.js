@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Upload from "./components/Upload/Upload";
+import Play from "./components/Play/Play";
+import Separator from "./components/Separator/Separator";
 
-function App() {
+const App = () => {
+  const [UploadedVideo, setUploadedVideo] = useState(null);
+  const [AllUpload, setAllUpload] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Upload
+        setUploadedVideo={setUploadedVideo}
+        UploadedVideo={UploadedVideo}
+        setAllUpload={setAllUpload}
+      />
+      <Separator />
+      <Play UploadedVideo={UploadedVideo} AllUpload={AllUpload} />
     </div>
   );
-}
+};
 
 export default App;
