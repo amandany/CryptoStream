@@ -44,10 +44,11 @@ export const encryptFile = async (RawFile) => {
 /**
  * Декодирует файл
  * @param {*} encryptedDataStr
+ * @param {*} decryptToken
  * @returns blob
  */
-export const decryptFile = (encryptedDataStr) => {
-  let decryptData = CryptoJS.AES.decrypt(encryptedDataStr, "aaa");
+export const decryptFile = (encryptedDataStr, decryptToken) => {
+  let decryptData = CryptoJS.AES.decrypt(encryptedDataStr, decryptToken);
   let uInt8Array = convertWordArrayToUint8Array(decryptData);
   let blob = new Blob([uInt8Array]);
   return blob;

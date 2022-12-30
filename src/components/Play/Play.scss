@@ -1,7 +1,9 @@
 .play-wrapper {
-  max-width: calc(100vw - 40px);
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .video-player {
     position: relative;
     display: flex;

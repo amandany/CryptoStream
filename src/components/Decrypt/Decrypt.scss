@@ -1,0 +1,18 @@
+.decrypt-wrapper {
+  width: fit-content;
+  max-width: 45vw;
+  text-align: left;
+
+  .video-token {
+    margin-bottom: 10px;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+    cursor: pointer;
+    &:hover {
+      border-bottom: 1px solid white;
+    }
+    &:active {
+      border-bottom: 1px solid rgb(116, 116, 116);
+    }
+  }
+}
