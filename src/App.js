@@ -9,6 +9,7 @@ import CryptoJS from "crypto-js";
 
 const App = () => {
   const [UploadedVideo, setUploadedVideo] = useState(null);
+  console.log();
   const [AllUpload, setAllUpload] = useState(false);
   const [ActiveVideoDecrypt, setActiveVideoDecrypt] = useState(null);
   const [GlobalData, setGlobalData] = useState({
@@ -19,7 +20,6 @@ const App = () => {
     DecryptToken: "aaa",
   });
 
-
   return (
     <Context.Provider value={{ GlobalData, setGlobalData }}>
       <div className="App">
@@ -29,7 +29,7 @@ const App = () => {
             UploadedVideo={UploadedVideo}
             setAllUpload={setAllUpload}
           />
-          <Decrypt setActiveVideoDecrypt={setActiveVideoDecrypt} />
+          <Decrypt setActiveVideoDecrypt={setActiveVideoDecrypt} UploadedVideo={UploadedVideo} />
         </div>
         <Separator />
         <div className="right">

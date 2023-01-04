@@ -6,10 +6,15 @@ import "./Decrypt.scss";
 import VideoDecryptor from "./VideoDecryptor";
 import VideoTokenList from "./VideoTokenList";
 
-const Decrypt = ({ setActiveVideoDecrypt }) => {
+const Decrypt = ({ setActiveVideoDecrypt, UploadedVideo }) => {
   const { GlobalData } = useContext(Context);
   const [ActiveToken, setActiveToken] = useState("");
   const [downloadProgress, setDownloadProgress] = useState(null);
+
+  useEffect(() => {
+    if (UploadedVideo) setActiveToken("");
+  }, [UploadedVideo]);
+
   useEffect(() => {
     if (ActiveToken !== "") {
       getDecryptedVideoByToken(ActiveToken, setDownloadProgress).then((res) => {
@@ -25,7 +30,12 @@ const Decrypt = ({ setActiveVideoDecrypt }) => {
 
   if (ActiveToken === "")
     return <VideoTokenList setActiveToken={setActiveToken} />;
-  return <VideoDecryptor ActiveToken={ActiveToken} downloadProgress={downloadProgress} />;
+  return (
+    <VideoDecryptor
+      ActiveToken={ActiveToken}
+      downloadProgress={downloadProgress}
+    />
+  );
 };
 
 export default Decrypt;
