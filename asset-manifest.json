@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CryptoStream/static/css/main.c9597f23.css",
+    "main.js": "/CryptoStream/static/js/main.6fad7374.js",
+    "index.html": "/CryptoStream/index.html",
+    "main.c9597f23.css.map": "/CryptoStream/static/css/main.c9597f23.css.map",
+    "main.6fad7374.js.map": "/CryptoStream/static/js/main.6fad7374.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9597f23.css",
+    "static/js/main.6fad7374.js"
+  ]
+}
