@@ -1,19 +1,7 @@
 import React from "react";
 import Loader from "../Loader/Loader";
 
-const UploadInProgress = ({ EncryptStatus, setEncryptStatus }) => {
-  // useEffect(() => {
-  //   let timer = null;
-  //   if (EncryptStatus === 2)
-  //     timer = setTimeout(() => {
-  //       setEncryptStatus((prev) => prev + 1);
-  //     }, 2000);
-
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [EncryptStatus, setEncryptStatus]);
-
+const UploadInProgress = ({ EncryptStatus, ProgressData }) => {
   if (EncryptStatus !== 2) return null;
 
   return (
@@ -22,7 +10,14 @@ const UploadInProgress = ({ EncryptStatus, setEncryptStatus }) => {
         ENCRYPTED <span className="symbol">✅</span>
       </p>
       <div className="upload-status">
-        SENDING <Loader />
+        <p>SENDING</p>
+        <Loader />
+        {ProgressData && (
+          <>
+            <progress id="file" min="0" max="1" value={ProgressData.progress} />
+            <p>{(ProgressData.progress.toFixed(2) * 100).toFixed(2)}%</p>
+          </>
+        )}
       </div>
     </div>
   );

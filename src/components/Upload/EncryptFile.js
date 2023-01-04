@@ -11,6 +11,7 @@ import UploadInProgress from "./UploadInProgress";
 
 const EncryptFile = ({ UploadedVideo, setAllUpload }) => {
   const [EncryptStatus, setEncryptStatus] = useState(0);
+  const [ProgressData, setProgressData] = useState(null);
 
   useEffect(() => {
     setEncryptStatus(0);
@@ -47,10 +48,11 @@ const EncryptFile = ({ UploadedVideo, setAllUpload }) => {
         EncryptStatus={EncryptStatus}
         setEncryptStatus={setEncryptStatus}
         UploadedVideo={UploadedVideo}
+        setProgressData={setProgressData}
       />
       <UploadInProgress
         EncryptStatus={EncryptStatus}
-        setEncryptStatus={setEncryptStatus}
+        ProgressData={ProgressData}
       />
       <Done EncryptStatus={EncryptStatus} />
     </>

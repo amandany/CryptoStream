@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import CryptoJS from "crypto-js";
 import Loader from "../Loader/Loader";
 import { Context } from "../../Context";
@@ -8,22 +8,25 @@ const EncryptInProgress = ({
   EncryptStatus,
   setEncryptStatus,
   UploadedVideo,
+  setProgressData,
 }) => {
-  const { GlobalData } = useContext(Context);
-  
+  const { GlobalData, setGlobalData } = useContext(Context);
+
   const sendVideo = useCallback(
     async (str) => {
-      sendEncryptedData(str)
+      sendEncryptedData(str, setProgressData)
         .then((res) => {
-          console.log(res);
+          setGlobalData((prev) => ({
+            ...prev,
+            VideoTokens: [...prev.VideoTokens, res.cid],
+          }));
           setEncryptStatus((prev) => prev + 1);
         })
         .catch((err) => {
-          console.log("err", err);
           setEncryptStatus((prev) => prev + 1);
         });
     },
-    [setEncryptStatus]
+    [setEncryptStatus, setGlobalData, setProgressData]
   );
 
   useEffect(() => {
@@ -44,7 +47,6 @@ const EncryptInProgress = ({
           );
           let encryptedDataStr = encryptedData.toString();
           setEncryptStatus((prev) => prev + 1);
-          console.log(encryptedDataStr);
           sendVideo(encryptedDataStr);
         };
       }
@@ -52,7 +54,13 @@ const EncryptInProgress = ({
     start();
 
     return () => {};
-  }, [EncryptStatus, GlobalData.DecryptToken, UploadedVideo, sendVideo, setEncryptStatus]);
+  }, [
+    EncryptStatus,
+    GlobalData.DecryptToken,
+    UploadedVideo,
+    sendVideo,
+    setEncryptStatus,
+  ]);
 
   if (EncryptStatus !== 1) return null;
   return (

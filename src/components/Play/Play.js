@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import DecryptedVideo from "./DecryptedVideo";
 import OriginalVideo from "./OriginalVideo";
 import "./Play.scss";
 
-const Play = ({ UploadedVideo, AllUpload }) => {
+const Play = ({ UploadedVideo, AllUpload, ActiveVideoDecrypt }) => {
   const [Video, setVideo] = useState(null);
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const Play = ({ UploadedVideo, AllUpload }) => {
     <div className="play-wrapper">
       <h1>Play</h1>
       <OriginalVideo Video={Video} AllUpload={AllUpload} />
+      <DecryptedVideo ActiveVideoDecrypt={ActiveVideoDecrypt} />
     </div>
   );
 };

@@ -10,20 +10,15 @@ import CryptoJS from "crypto-js";
 const App = () => {
   const [UploadedVideo, setUploadedVideo] = useState(null);
   const [AllUpload, setAllUpload] = useState(false);
+  const [ActiveVideoDecrypt, setActiveVideoDecrypt] = useState(null);
   const [GlobalData, setGlobalData] = useState({
     VideoTokens: [
       "bafkreid73m36otrtzszutnfgkhsanna3iv2nelrx3dj36cktvoxhtm3ktm",
-      "fdgni4ui4yhiuyh4uifgy4iufbi4uyf",
+      "bafkreibpygae2wsfkckk5e6d73tsobx3wjrthndniacjxmzsabli4smp2e",
     ],
     DecryptToken: "aaa",
   });
 
-  useEffect(() => {
-    let myStr = "NICEPLACETOLIVEIN";
-    let encryptedData = CryptoJS.AES.encrypt(myStr, GlobalData.DecryptToken);
-    console.log("!!!", encryptedData.toString());
-    return () => {};
-  }, [GlobalData.DecryptToken]);
 
   return (
     <Context.Provider value={{ GlobalData, setGlobalData }}>
@@ -34,11 +29,15 @@ const App = () => {
             UploadedVideo={UploadedVideo}
             setAllUpload={setAllUpload}
           />
-          <Decrypt />
+          <Decrypt setActiveVideoDecrypt={setActiveVideoDecrypt} />
         </div>
         <Separator />
         <div className="right">
-          <Play UploadedVideo={UploadedVideo} AllUpload={AllUpload} />
+          <Play
+            UploadedVideo={UploadedVideo}
+            AllUpload={AllUpload}
+            ActiveVideoDecrypt={ActiveVideoDecrypt}
+          />
         </div>
       </div>
     </Context.Provider>

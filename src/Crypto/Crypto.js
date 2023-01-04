@@ -25,7 +25,6 @@ export const convertWordArrayToUint8Array = (wordArray) => {
  * @returns encryptedDataStr
  */
 export const encryptFile = async (RawFile) => {
-  console.log(RawFile);
   let file = RawFile.target.files[0];
   let reader = new FileReader();
   reader.onerror = function () {
