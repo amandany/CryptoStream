@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/CryptoStream/static/css/main.c9597f23.css",
-    "main.js": "/CryptoStream/static/js/main.efc4dbe3.js",
+    "main.css": "/CryptoStream/static/css/main.27527521.css",
+    "main.js": "/CryptoStream/static/js/main.d79bcd4d.js",
+    "static/media/girl.png": "/CryptoStream/static/media/girl.63b59d2a8a4d2f35702b.png",
+    "static/media/proximanova_regular.ttf": "/CryptoStream/static/media/proximanova_regular.8181ca4b7c2d1189d78a.ttf",
+    "static/media/proximanova_extrabold.otf": "/CryptoStream/static/media/proximanova_extrabold.4b4dcc64004a8654a484.otf",
+    "static/media/proximanova_boldit.otf": "/CryptoStream/static/media/proximanova_boldit.d408af56f8cabc640e22.otf",
+    "static/media/proximanova_bold.otf": "/CryptoStream/static/media/proximanova_bold.fcaab2524c5baabd71f6.otf",
+    "static/media/proximanova_black.ttf": "/CryptoStream/static/media/proximanova_black.242bb22b1980e9cb0aea.ttf",
+    "static/media/proximanova_light.otf": "/CryptoStream/static/media/proximanova_light.9d69a5449e101ad71e3d.otf",
+    "static/media/Blanka-Regular.otf": "/CryptoStream/static/media/Blanka-Regular.16f6265b20de0db4a921.otf",
     "index.html": "/CryptoStream/index.html",
-    "main.c9597f23.css.map": "/CryptoStream/static/css/main.c9597f23.css.map",
-    "main.efc4dbe3.js.map": "/CryptoStream/static/js/main.efc4dbe3.js.map"
+    "main.27527521.css.map": "/CryptoStream/static/css/main.27527521.css.map",
+    "main.d79bcd4d.js.map": "/CryptoStream/static/js/main.d79bcd4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9597f23.css",
-    "static/js/main.efc4dbe3.js"
+    "static/css/main.27527521.css",
+    "static/js/main.d79bcd4d.js"
   ]
 }
