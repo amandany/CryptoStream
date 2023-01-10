@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CryptoStream/static/css/main.27527521.css",
-    "main.js": "/CryptoStream/static/js/main.d79bcd4d.js",
+    "main.js": "/CryptoStream/static/js/main.ac85ce0b.js",
     "static/media/girl.png": "/CryptoStream/static/media/girl.63b59d2a8a4d2f35702b.png",
     "static/media/proximanova_regular.ttf": "/CryptoStream/static/media/proximanova_regular.8181ca4b7c2d1189d78a.ttf",
     "static/media/proximanova_extrabold.otf": "/CryptoStream/static/media/proximanova_extrabold.4b4dcc64004a8654a484.otf",
@@ -12,10 +12,10 @@
     "static/media/Blanka-Regular.otf": "/CryptoStream/static/media/Blanka-Regular.16f6265b20de0db4a921.otf",
     "index.html": "/CryptoStream/index.html",
     "main.27527521.css.map": "/CryptoStream/static/css/main.27527521.css.map",
-    "main.d79bcd4d.js.map": "/CryptoStream/static/js/main.d79bcd4d.js.map"
+    "main.ac85ce0b.js.map": "/CryptoStream/static/js/main.ac85ce0b.js.map"
   },
   "entrypoints": [
     "static/css/main.27527521.css",
-    "static/js/main.d79bcd4d.js"
+    "static/js/main.ac85ce0b.js"
   ]
 }
