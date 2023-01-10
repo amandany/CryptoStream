@@ -1,0 +1,27 @@
+nav {
+  padding: 20px 50px;
+  border-bottom: 1px solid rgb(87, 87, 87);
+  height: 70px;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 100px;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    text-transform: uppercase;
+    
+    li {
+      font-family: proximanova_black;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(87, 87, 87, 0);
+      transition: all 0.2s ease-in;
+      padding-bottom: 5px;
+      &:hover {
+        border-bottom: 1px solid rgb(87, 87, 87);
+      }
+    }
+  }
+}

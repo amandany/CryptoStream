@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'proximanova_black';
+    src: local("proximanova_black"), url('./Fonts/proximanova_black.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'proximanova_bold';
+    src: local("proximanova_bold"), url('./Fonts/proximanova_bold.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'proximanova_bold_italic';
+    src: local("proximanova_bold_italic"), url('./Fonts/proximanova_boldit.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'proximanova_extrabold';
+    src: local("proximanova_extrabold"), url('./Fonts/proximanova_extrabold.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'proximanova_light';
+    src: local("proximanova_light"), url('./Fonts/proximanova_light.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'proximanova_regular';
+    src: local("proximanova_regular"), url('./Fonts/proximanova_regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'BlankaRegular';
+    src: local("BlankaRegular"), url('./Fonts/Blanka-Regular.otf') format("opentype");
+}
