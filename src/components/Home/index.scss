@@ -44,7 +44,6 @@
   left: 20%;
   width: 70vw;
   .header {
-
     font-size: 50px;
     font-family: proximanova_extrabold;
     span {
@@ -53,19 +52,31 @@
   }
   .advantage {
     span {
-      color: red;
+       color: rgb(255, 62, 62);
       font-weight: bold;
     }
   }
   .safe {
     position: absolute;
-    overflow: hidden;
     right: 400px;
-    width: fit-content;
-    white-space: nowrap;
+    width: 600px;
+
     margin-top: 100px;
-    font-size: 70px;
-    color: rgb(206, 206, 206);
-    border-bottom: 1px solid rgb(245, 245, 245);
+    h1 {
+      white-space: nowrap;
+      font-size: 70px;
+      border-bottom: 1px solid rgb(245, 245, 245);
+      text-shadow: 0 0 4px rgba(202, 228, 225, 0.92),
+        0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(191, 226, 255, 0.52),
+        0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78),
+        0 0 54px rgba(191, 226, 255, 0.92);
+    }
+    p {
+      margin-top: 10px;
+    }
+    .underline {
+      border-bottom: 1px solid rgb(204, 204, 204);
+      color: rgb(255, 62, 62);
+    }
   }
 }

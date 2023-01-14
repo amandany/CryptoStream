@@ -21,9 +21,8 @@ body {
   color: whitesmoke;
   font-family: proximanova_regular;
 }
-p::selection,
-h1::selection,
-div::selection {
+
+*::selection {
   color: var(--main-text-color-active);
   background-color: rgba(28, 28, 28, 0.5);
 }

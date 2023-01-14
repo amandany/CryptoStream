@@ -29,14 +29,24 @@ const Middle = () => {
           );
         })}
       </motion.ol>
-      <motion.h1
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 2 }}
-        className="safe"
-      >
-        ABSOLUTELY SAFE
-      </motion.h1>
+      <div className="safe">
+        <motion.h1
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
+          ABSOLUTELY SAFE
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 3 }}
+        >
+          Our main goal is to create a flexible, powerful, lightweight and easy
+          system for viewing content. We encrypt <span className="underline">ALL</span> outgoing
+          content from client to server.
+        </motion.p>
+      </div>
     </div>
   );
 };
