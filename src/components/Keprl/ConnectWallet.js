@@ -16,16 +16,17 @@ const ConnectWallet = async () => {
   console.log("start");
   await window.keplr.enable(CHAIN_ID);
 
-  let keplrOfflineSigner = window.keplr.getOfflineSignerOnlyAmino(CHAIN_ID);
+  // let keplrOfflineSigner = window.keplr.getOfflineSignerOnlyAmino(CHAIN_ID);
+  let keplrOfflineSigner = window.getOfflineSigner(CHAIN_ID);
+
   console.log("keplrOfflineSigner", keplrOfflineSigner);
 
   const accounts = await keplrOfflineSigner.getAccounts();
-  const myAddress = accounts[0].address;
+  // const myAddress = accounts[0].address;
   console.log("accounts", accounts);
 
-  //   const grpcWebUrl = "https://secret-4.api.trivium.network:26657";
-  //   const grpcWebUrl = "https://secret-4.api.trivium.network:9091";
-  const grpcWebUrl = "https://grpc.secret.forbole.com/";
+  // const grpcWebUrl = "https://secret-4.api.trivium.network:9091";
+  const grpcWebUrl = "https://wgrpc.secret.express";
 
   //   const secretjs = await SecretNetworkClient.create({
   //     grpcWebUrl,
@@ -35,31 +36,44 @@ const ConnectWallet = async () => {
   //     encryptionUtils: window.getEnigmaUtils(CHAIN_ID),
   //   });
 
-  const secretjs = new SecretNetworkClient({
+  // const secretjs = new SecretNetworkClient({
+  //   grpcWebUrl,
+  //   chainId: CHAIN_ID,
+  //   wallet: keplrOfflineSigner,
+  //   // walletAddress: accounts[0].address,
+  //   walletAddress: myAddress,
+  //   encryptionUtils: window.keplr.getEnigmaUtils(CHAIN_ID),
+  // });
+
+  const secretjs = await SecretNetworkClient.create({
     grpcWebUrl,
     chainId: CHAIN_ID,
     wallet: keplrOfflineSigner,
-    // walletAddress: accounts[0].address,
-    walletAddress: myAddress,
-    encryptionUtils: window.keplr.getEnigmaUtils(CHAIN_ID),
+    walletAddress: accounts[0].address,
+    encryptionUtils: window.getEnigmaUtils(CHAIN_ID),
   });
 
   console.log("secretjs", secretjs);
 
-  const {
-    balance: { amount },
-  } = await secretjs.query.bank.balance(
-    {
-      address: "secret1ap26qrlp8mcq2pg6r47w43l0y8zkqm8a450s03",
-      denom: "uscrt",
-    } /*,
-    // optional: query at a specific height (using an archive node) 
-    new grpc.Metadata({"x-cosmos-block-height": "2000000"})
-    */,
-  );
-  
-  console.log(`I have ${Number(amount) / 1e6} SCRT!`);
-  
+  // const {
+  //   balance: { amount },
+  // } = await secretjs.query.bank.balance(
+  //   {
+  //     address: "secret1ap26qrlp8mcq2pg6r47w43l0y8zkqm8a450s03",
+  //     denom: "uscrt",
+  //   } /*,
+  //   // optional: query at a specific height (using an archive node)
+  //   new grpc.Metadata({"x-cosmos-block-height": "2000000"})
+  //   */
+  // );
+
+  const balance = await secretjs.query.bank.balance({
+    address: accounts[0].address,
+    denom: "uscrt",
+  });
+
+  console.log("balance", balance);
+
   return await secretjs;
 
   // const balance = await secretjs.query.bank.balance({

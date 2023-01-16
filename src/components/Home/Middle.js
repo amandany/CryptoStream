@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import geometry from '../../img/geometry.png';
+import geometry2 from '../../img/geometry2.png';
+
 
 let advantages = ["Database", "Collect any Data", "Surveillance"];
 
@@ -46,6 +49,10 @@ const Middle = () => {
           system for viewing content. We encrypt <span className="underline">ALL</span> outgoing
           content from client to server.
         </motion.p>
+      </div>
+      <div className="geometry-wrapper">
+
+      <img className="img-geometry-1" src={geometry2} alt="geometry" />
       </div>
     </div>
   );
